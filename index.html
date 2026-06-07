@@ -69,13 +69,13 @@
   .section-title { font-family: var(--serif); font-size: 2rem; color: var(--ink); }
 
   /* ABOUT */
-  .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; }
+  .about-grid { display: grid; grid-template-columns: 3fr 1fr; gap: 3rem; }
   .about-text p { color: var(--ink2); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; font-weight: 300; }
   .about-text p strong { font-weight: 500; color: var(--ink); }
 
   /* PHOTO */
-  .photo-block { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
-  .photo-frame { width: 180px; height: 220px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .photo-block { display: flex; flex-direction: column; align-items: center; gap: 1rem; position: sticky; top: 80px; }
+  .photo-frame { width: 360px; height: 440px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .photo-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--ink3); font-size: 0.78rem; text-align: center; padding: 1rem; }
   .photo-placeholder svg { opacity: 0.3; }
@@ -172,7 +172,7 @@
 <section class="hero" id="home">
   <div class="hero-left">
     <div class="hero-eyebrow fade-up delay-1">Research Portfolio</div>
-    <h1 class="hero-name fade-up delay-2">Nabil<br><em>Walid Rafi</em></h1>
+    <h1 class="hero-name fade-up delay-2">Nabil Walid<br><em class="hero-name fade-up delay-2">Rafi</em></h1>
     <p class="hero-title fade-up delay-3">ICE Graduate · Research Assistant at BUP · Seeking Fully Funded Master's Research Assistantship</p>
     <div class="hero-tags fade-up delay-3">
       <span class="tag blue">Explainable Medical AI</span>
@@ -235,11 +235,25 @@
     <div class="about-grid">
       <div>
         <div class="about-text">
-          <p>I am a final-year B.Sc. student in Information and Communication Engineering at <strong>Bangladesh University of Professionals (BUP)</strong>, graduating with a CGPA of <strong>3.72/4.00</strong>. My research is concentrated at the intersection of clinical AI interpretability, multimodal language models, and intelligent decision-support systems for healthcare.</p>
-          <p>As a Research Assistant under <strong>Lecturer Md. Sazzadul Islam Prottasha</strong> (PhD Student, Hamad Bin Khalifa University, Qatar) and collaborations with  <strong>Dr. Md. Zulfiker Mahmud</strong> (Jagannath University, Bangladesh), <strong>Dr. Md. Zulfiker Mahmud</strong> (Jagannath University, Bangladesh), <strong>Md. Rejaul Karim, PhD</strong> (Bangladesh Bank (The Central Bank of Bangladesh),
- <strong>Lecturer Sana Ulla</strong> (Stamford University Bangladesh), and <strong>Lecturer Elmeeh Hasan Shipra</strong> (ISTT, Bangladesh), I have contributed to <strong>8 research works</strong> spanning fine-tuned clinical LLMs, hallucination-aware vision-language model reviews, XAI-driven diagnostic ensembles, and socio-culturally engineered smart grid forecasting.</p>
-          <p>My work has been published or is under review in <strong>Taylor &amp; Francis</strong>, the <strong>Journal of Machine Learning and Deep Learning</strong>, <strong>PLOS One</strong>, <strong>Franklin Open</strong>, and IEEE Xplore conference proceedings. I am actively seeking a <strong>fully funded Master's Research Assistantship</strong> to advance interpretable, clinically deployable AI systems within a strong research environment.</p>
-        </div>
+  <p>I have graduated with a B.Sc. in Information and Communication Engineering from <strong>Bangladesh University of Professionals (BUP)</strong>, with a CGPA of <strong>3.72/4.00</strong>. My research is concentrated at the intersection of clinical AI interpretability, multimodal language models, and intelligent decision-support systems for healthcare.</p>
+  <p>As a Research Assistant at Bangladesh University of Professionals and Bangladesh Bank(The Central Bank of Bangladesh), I have contributed to <strong>8 research works</strong> spanning fine-tuned clinical LLMs, hallucination-aware vision-language model reviews, XAI-driven diagnostic ensembles, and socio-culturally engineered smart grid forecasting, in collaboration with:</p>
+
+    <ul style="margin: 0.75rem 0 1rem 0; display: flex; flex-direction: column; gap: 0.4rem; list-style: none; padding: 0;">
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Md. Sazzadul Islam Prottasha</strong>, Research Supervisor · Lecturer, Dept. of ICT, BUP · PhD Student, Hamad Bin Khalifa University, Qatar</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Colonel Md. Masud Rana, psc, PhD</strong>, Chairman, Dept. of ICT, Bangladesh University of Professionals</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Saiful Islam</strong>, Assistant Professor, Dept. of ICT, Bangladesh University of Professionals</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Dr. Md. Zulfiker Mahmud</strong>, Dept. of CSE, Jagannath University, Bangladesh</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Md. Rejaul Karim, PhD</strong>, Additional Director (ICT), Bangladesh Bank (The Central Bank of Bangladesh)</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Uttam Kumar Roy</strong>, Deputy Director(ICT), Bangladesh Bank</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Sana Ulla, M.Sc.</strong>, Lecturer, Dept. of CSE, Stamford University Bangladesh</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Elmeeh Hasan Shipra</strong>, Lecturer, Dept. of ECE, Institute of Science, Trade &amp; Technology (ISTT), Bangladesh</li>
+    <li style="font-size:0.9rem;color:var(--ink2);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--ink3);">—</span> <strong>Mohammad Nashrullah Naum</strong>, Lecturer, Dept. of CSE, Northern University Bangladesh</li>
+
+</ul>
+
+  </ul>
+  <p>My work has been published or is under review in <strong>Taylor &amp; Francis</strong>, the <strong>Journal of Machine Learning and Deep Learning</strong>, <strong>PLOS One</strong>, <strong>Franklin Open</strong>, and IEEE Xplore conference proceedings. I am actively seeking a <strong>fully funded Master's Research Assistantship</strong> to advance interpretable, clinically deployable AI systems within a strong research environment.</p>
+</div>
         <div class="skills-block" style="margin-top:2rem;">
           <div><div class="skill-group-title">Medical AI &amp; LLMs</div><div class="skill-pills"><span class="skill-pill">MedGemma</span><span class="skill-pill">LLaVA-Med</span><span class="skill-pill">BiomedCLIP</span><span class="skill-pill">LoRA / QLoRA</span><span class="skill-pill">PEFT</span><span class="skill-pill">Multimodal FT</span></div></div>
           <div><div class="skill-group-title">Explainable AI</div><div class="skill-pills"><span class="skill-pill">SHAP</span><span class="skill-pill">LIME</span><span class="skill-pill">GradCAM</span><span class="skill-pill">PFI</span><span class="skill-pill">ALE</span><span class="skill-pill">PDP</span></div></div>
