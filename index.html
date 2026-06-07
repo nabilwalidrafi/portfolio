@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nabil Walid Rafi — Research Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f0f0e;
+    --ink2: #3a3936;
+    --ink3: #6b6862;
+    --surface: #faf9f7;
+    --paper: #f2efe9;
+    --line: rgba(0,0,0,0.10);
+    --accent: #1a4e8a;
+    --accent2: #0e6e56;
+    --accent3: #8a3a1a;
+    --gold: #b87a12;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,249,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink3);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 56px;
+  }
+  .hero-left {
+    padding: 6rem 4rem 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 10%; bottom: 10%;
+    width: 1px;
+    background: var(--line);
+  }
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-title {
+    font-size: 1.05rem;
+    color: var(--ink3);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+    line-height: 1.6;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+  .tag {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    color: var(--ink2);
+    background: var(--paper);
+    letter-spacing: 0.02em;
+  }
+  .tag.blue { border-color: rgba(26,78,138,0.3); color: var(--accent); background: rgba(26,78,138,0.06); }
+  .tag.green { border-color: rgba(14,110,86,0.3); color: var(--accent2); background: rgba(14,110,86,0.06); }
+  .tag.amber { border-color: rgba(184,122,18,0.3); color: var(--gold); background: rgba(184,122,18,0.06); }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .btn-primary {
+    padding: 0.75rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #153e6e; transform: translateY(-1px); }
+  .btn-outline {
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--ink3);
+    color: var(--ink2);
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
+
+  .hero-right {
+    padding: 6rem 6rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .stat-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .stat-card.blue::before { background: var(--accent); }
+  .stat-card.green::before { background: var(--accent2); }
+  .stat-card.amber::before { background: var(--gold); }
+  .stat-card.red::before { background: var(--accent3); }
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--ink3);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .hero-quote {
+    background: var(--paper);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .hero-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--ink3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-item:hover { color: var(--accent); }
+  .contact-item svg { flex-shrink: 0; }
+
+  /* SECTIONS */
+  section { padding: 5rem 0; }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-number {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--ink3);
+    font-style: italic;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--ink);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+  .about-text p {
+    color: var(--ink2);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .about-text p strong { font-weight: 500; color: var(--ink); }
+  .skills-block { display: flex; flex-direction: column; gap: 1rem; }
+  .skill-group-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink3);
+    margin-bottom: 0.5rem;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-pill {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ink2);
+  }
+
+  /* PUBLICATIONS */
+  .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .pub-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .pub-card:hover {
+    border-color: rgba(26,78,138,0.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .pub-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .pub-badge.published { background: rgba(14,110,86,0.1); color: var(--accent2); }
+  .pub-badge.review { background: rgba(184,122,18,0.1); color: var(--gold); }
+  .pub-badge.conference { background: rgba(26,78,138,0.1); color: var(--accent); }
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .pub-authors {
+    font-size: 0.85rem;
+    color: var(--ink3);
+    margin-bottom: 0.4rem;
+  }
+  .pub-venue {
+    font-size: 0.82rem;
+    color: var(--ink3);
+    font-style: italic;
+  }
+  .pub-metric {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent2);
+    background: rgba(14,110,86,0.06);
+    border: 1px solid rgba(14,110,86,0.2);
+    border-radius: 4px;
+    padding: 0.25rem 0.65rem;
+    white-space: nowrap;
+    margin-top: 3px;
+    text-align: center;
+  }
+
+  /* RESEARCH / PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .project-card:hover {
+    border-color: rgba(26,78,138,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  }
+  .project-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .project-card-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .project-desc {
+    font-size: 0.875rem;
+    color: var(--ink3);
+    line-height: 1.65;
+    flex: 1;
+    font-weight: 300;
+  }
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .tech-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    background: var(--paper);
+    color: var(--ink3);
+    border: 1px solid var(--line);
+  }
+
+  /* EXPERIENCE */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1px 1fr;
+    gap: 0 2rem;
+    position: relative;
+    padding-bottom: 3rem;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-date {
+    text-align: right;
+    padding-top: 0.2rem;
+  }
+  .timeline-date-label {
+    font-size: 0.8rem;
+    color: var(--ink3);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .timeline-line {
+    position: relative;
+    background: var(--line);
+  }
+  .timeline-line::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 50%;
+    transform: translateX(-50%);
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--surface);
+  }
+  .timeline-content { padding-top: 0; }
+  .timeline-org {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+  .timeline-role {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .timeline-bullets li {
+    font-size: 0.9rem;
+    color: var(--ink2);
+    padding-left: 1rem;
+    position: relative;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .timeline-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink3);
+    font-size: 0.8rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 3rem 4rem;
+    text-align: center;
+  }
+  footer .footer-name {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.25rem 0;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  footer a:hover { color: #fff; }
+  footer .footer-note { font-size: 0.8rem; margin-top: 1.5rem; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.36s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 2rem 2rem; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-line { display: none; }
+    .timeline-date { text-align: left; }
+    .section-inner { padding: 0 1.5rem; }
+    nav .nav-links { display: none; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .pub-card { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-brand">N. W. Rafi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up delay-1">Research Portfolio</div>
+    <h1 class="hero-name fade-up delay-2">Nabil<br><em>Walid Rafi</em></h1>
+    <p class="hero-title fade-up delay-3">
+      ICE Graduate · Research Assistant at BUP ·
+      Seeking Fully Funded Master's Research Assistantship
+    </p>
+    <div class="hero-tags fade-up delay-3">
+      <span class="tag blue">Explainable Medical AI</span>
+      <span class="tag blue">Multimodal LLMs</span>
+      <span class="tag green">Smart Grid Forecasting</span>
+      <span class="tag amber">Clinical Decision Systems</span>
+    </div>
+    <div class="hero-cta fade-up delay-4">
+      <a href="#publications" class="btn-primary">View Publications</a>
+      <a href="mailto:nabilwalidrafi@gmail.com" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right fade-up delay-2">
+    <div class="stat-row">
+      <div class="stat-card blue">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Research Works</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-number">3.72</div>
+        <div class="stat-label">CGPA / 4.00</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Journals (IEEE, PLOS, Franklin)</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Conference Papers</div>
+      </div>
+    </div>
+
+    <div class="hero-quote">
+      <p>"Building interpretable, clinically deployable AI systems that earn the trust of both clinicians and patients."</p>
+    </div>
+
+    <div class="hero-contact">
+      <a href="mailto:nabilwalidrafi@gmail.com" class="contact-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        nabilwalidrafi@gmail.com
+      </a>
+      <a href="https://github.com/nabilwalidrafi" target="_blank" class="contact-item">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7C6.73 19.9 6.14 18 6.14 18c-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 7.6c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+        nabilwalidrafi
+      </a>
+      <a href="https://huggingface.co/nabilwalidrafi" target="_blank" class="contact-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        HuggingFace · nabilwalidrafi
+      </a>
+      <span class="contact-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Dhaka, Bangladesh
+      </span>
+      <a href="https://orcid.org/0009-0007-0020-6278" target="_blank" class="contact-item">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.14 6.84H8.4V17.16H6.96V6.84H4.44V5.4h6.42v1.44zm5.94 10.32h-1.44c-.168 0-.312-.06-.432-.18-.12-.12-.18-.264-.18-.432V8.148c.528-.168 1.092-.252 1.692-.252 1.32 0 2.316.396 2.988 1.188.672.792 1.008 1.92 1.008 3.384 0 1.488-.348 2.64-1.044 3.456-.696.816-1.704 1.236-3.024 1.236h-.564z"/></svg>
+        ORCID: 0009-0007-0020-6278
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--paper);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Research Profile</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a final-year B.Sc. student in Information and Communication Engineering at
+          <strong>Bangladesh University of Professionals (BUP)</strong>, graduating with a CGPA of
+          <strong>3.72/4.00</strong>. My research is concentrated at the intersection of
+          clinical AI interpretability, multimodal language models, and intelligent
+          decision-support systems for healthcare.
+        </p>
+        <p>
+          As a Research Assistant under <strong>Dr. Md. Sazzadul Islam Prottasha</strong> (BUP / Hamad Bin Khalifa University)
+          and <strong>Sana Ulla</strong> (Stamford University Bangladesh), I have contributed to
+          <strong>8 research works</strong> spanning fine-tuned clinical LLMs, hallucination-aware
+          vision-language model reviews, XAI-driven diagnostic ensembles, and
+          socio-culturally engineered smart grid forecasting.
+        </p>
+        <p>
+          My work has been published or is under review in <strong>IEEE Access</strong>,
+          <strong>PLOS One</strong>, <strong>Franklin Open</strong>, the <strong>International Journal of Smart Grid</strong>,
+          and IEEE Xplore conference proceedings. I am actively seeking a
+          <strong>fully funded Master's Research Assistantship</strong> to advance interpretable,
+          clinically deployable AI systems within a strong research environment.
+        </p>
+      </div>
+      <div class="skills-block">
+        <div>
+          <div class="skill-group-title">Medical AI & LLMs</div>
+          <div class="skill-pills">
+            <span class="skill-pill">MedGemma</span>
+            <span class="skill-pill">LLaVA-Med</span>
+            <span class="skill-pill">BiomedCLIP</span>
+            <span class="skill-pill">LoRA / QLoRA</span>
+            <span class="skill-pill">PEFT</span>
+            <span class="skill-pill">Multimodal FT</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">Explainable AI</div>
+          <div class="skill-pills">
+            <span class="skill-pill">SHAP</span>
+            <span class="skill-pill">LIME</span>
+            <span class="skill-pill">GradCAM</span>
+            <span class="skill-pill">PFI</span>
+            <span class="skill-pill">ALE</span>
+            <span class="skill-pill">PDP</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">ML & Forecasting</div>
+          <div class="skill-pills">
+            <span class="skill-pill">XGBoost</span>
+            <span class="skill-pill">LightGBM</span>
+            <span class="skill-pill">Optuna</span>
+            <span class="skill-pill">Prophet</span>
+            <span class="skill-pill">Chronos-2</span>
+            <span class="skill-pill">TabNet</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">Deployment & Tools</div>
+          <div class="skill-pills">
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">React.js</span>
+            <span class="skill-pill">HuggingFace Spaces</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">PyTorch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Publications</h2>
+    </div>
+    <div class="pub-list">
+
+      <div class="pub-card">
+        <span class="pub-badge published">Published</span>
+        <div>
+          <div class="pub-title">MedGemma vs GPT-4: Zero-Shot Medical Disease Classification from Images</div>
+          <div class="pub-authors">Md. S. I. Prottasha, <strong>N. W. Rafi</strong> (2025)</div>
+          <div class="pub-venue">Journal of Machine Learning and Deep Learning (JMLDL), 2(2). DOI: 10.64820/AEPJMLDL.22.1.9.122025</div>
+        </div>
+        <div class="pub-metric">80.37% vs 69.58%<br><span style="font-weight:400;font-size:0.7rem;">across 6 categories</span></div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge conference">Conference</span>
+        <div>
+          <div class="pub-title">An Explainable MLP-Based Framework for Dengue Classification using Stacked Ensembling</div>
+          <div class="pub-authors">N. Naum, <strong>N. W. Rafi</strong>, E. H. Shipra, S. Ulla (2025)</div>
+          <div class="pub-venue">28th ICCIT, Cox's Bazar, Bangladesh — IEEE Xplore</div>
+        </div>
+        <div class="pub-metric">84.59% Accuracy<br><span style="font-weight:400;font-size:0.7rem;">SHAP & LIME XAI</span></div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge conference">Conference</span>
+        <div>
+          <div class="pub-title">Smarter SME Lending: AI-Driven Credit Risk Assessment Using Structured and Textual Data</div>
+          <div class="pub-authors"><strong>N. W. Rafi</strong>, Md. R. Karim, U. K. Roy (2025) — First Author</div>
+          <div class="pub-venue">IDAA 2025, Dhaka, Bangladesh — IEEE Xplore</div>
+        </div>
+        <div class="pub-metric">AUC 0.881<br><span style="font-weight:400;font-size:0.7rem;">79.2% accuracy</span></div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge conference">Conference</span>
+        <div>
+          <div class="pub-title">Microstrip Patch Antenna with Trident-Shaped Slot for 5G Applications</div>
+          <div class="pub-authors">F. I. Reddhow, <strong>N. W. Rafi</strong> et al. (2025)</div>
+          <div class="pub-venue">NCIM 2025, Bangladesh — IEEE Xplore. DOI: 10.1109/NCIM65934.2025.11160305</div>
+        </div>
+        <div class="pub-metric">8.32 dB Gain<br><span style="font-weight:400;font-size:0.7rem;">87.51% Efficiency</span></div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge review">Under Review</span>
+        <div>
+          <div class="pub-title">Multimodal AI MedGemma-4B Synergizing LoRA Compared with Federated Learning Models for Brain Tumor Classification</div>
+          <div class="pub-authors">Md. S. I. Prottasha, <strong>N. W. Rafi</strong> (2025)</div>
+          <div class="pub-venue">Franklin Open — Under Review</div>
+        </div>
+        <div class="pub-metric">99.25% Accuracy<br><span style="font-weight:400;font-size:0.7rem;">Outperforms FL-VGG16</span></div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge review">Under Review</span>
+        <div>
+          <div class="pub-title">A High-Fidelity Soft-Voting Ensemble Framework for Breast Cancer Classification with Robust Local and Global Explainable AI</div>
+          <div class="pub-authors">S. Ulla, E. H. Shipra, <strong>N. W. Rafi</strong>, M. N. Naum (2026)</div>
+          <div class="pub-venue">PLOS One — Under Review</div>
+        </div>
+        <div class="pub-metric">ROC-AUC 0.9970<br><span style="font-weight:400;font-size:0.7rem;">100% Precision</span></div>
+      </div>
+	  
+	  <div class="pub-card">
+        <span class="pub-badge" style="background:rgba(90,50,140,0.1);color:#5a328c;">In Preparation</span>
+        <div>
+          <div class="pub-title">AI-Driven Intelligent Load Forecasting System for Dhaka's Power Grid using DESCO Consumption Patterns</div>
+          <div class="pub-authors">Md. S. I. Prottasha, <strong>N. W. Rafi</strong> et al. (2026)</div>
+          <div class="pub-venue">Target: International Journal of Smart Grid</div>
+        </div>
+        <div class="pub-metric">R² = 0.9998<br><span style="font-weight:400;font-size:0.7rem;">MAE=2.19 MW, MAPE=0.25%</span></div>
+      </div>
+
+      <div class="pub-card">
+        <span class="pub-badge" style="background:rgba(90,50,140,0.1);color:#5a328c;">In Preparation</span>
+        <div>
+          <div class="pub-title">Few-Shot Learning of Multimodal LLMs for Generalized Clinical Vision-Language Operations with Explainability for Hallucinations</div>
+          <div class="pub-authors"><strong>N. W. Rafi</strong> et al. (2026) — First Author</div>
+          <div class="pub-venue">Target: IEEE Access</div>
+        </div>
+        <div class="pub-metric">204 papers<br><span style="font-weight:400;font-size:0.7rem;">Tripartite XAI-FAREBIO</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PROJECTS -->
+<section id="research" style="background: var(--paper);">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Research Projects</h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(26,78,138,0.08);">🧠</div>
+        <div class="project-card-title">Brain Tumor Classification with MedGemma + LoRA</div>
+        <div class="project-desc">End-to-end multimodal LLM fine-tuning pipeline using LoRA adapters on 30,000-sample MRI corpus. Achieved 99.25% accuracy, outperforming federated VGG16 baselines. Deployed on HuggingFace Spaces.</div>
+        <div class="project-tech">
+          <span class="tech-tag">MedGemma-4B</span>
+          <span class="tech-tag">LoRA</span>
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">HuggingFace</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(14,110,86,0.08);">⚡</div>
+        <div class="project-card-title">DESCO Smart Grid Demand Forecasting</div>
+        <div class="project-desc">39-feature hourly forecasting system using Optuna-tuned XGBoost over 11 competing models. Includes SHAP explainability, ablation studies, and a two-tier FastAPI/React web app with Open-Meteo integration.</div>
+        <div class="project-tech">
+          <span class="tech-tag">XGBoost</span>
+          <span class="tech-tag">Optuna</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">Chronos-2</span>
+          <span class="tech-tag">SHAP</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(138,58,26,0.08);">🔬</div>
+        <div class="project-card-title">Dermatology VLM Fine-Tuning (HAM10000)</div>
+        <div class="project-desc">Multi-model fine-tuning study on HAM10000 dataset with novel contributions: H-LoRA, DATA augmentation, PGCL, CMAC, and zero-shot transfer protocol. Models: PubMedCLIP, SkinVL-PubMM, MedSigLIP.</div>
+        <div class="project-tech">
+          <span class="tech-tag">PubMedCLIP</span>
+          <span class="tech-tag">H-LoRA</span>
+          <span class="tech-tag">HAM10000</span>
+          <span class="tech-tag">PGCL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(184,122,18,0.08);">🦟</div>
+        <div class="project-card-title">Dengue Hotspot Prediction — Bangladesh</div>
+        <div class="project-desc">Benchmarked 19+ models with Optuna tuning for district-level dengue prediction. Choropleth maps, recursive 2022–2026 forecasts, zero-inflated target handling, and outlier year weighting.</div>
+        <div class="project-tech">
+          <span class="tech-tag">XGBoost</span>
+          <span class="tech-tag">Optuna</span>
+          <span class="tech-tag">Geopandas</span>
+          <span class="tech-tag">SHAP</span>
+          <span class="tech-tag">LIME</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(26,78,138,0.08);">💳</div>
+        <div class="project-card-title">AI Credit Risk for SME Lending (Bangladesh Bank)</div>
+        <div class="project-desc">Integrated BERT text embeddings with XGBoost structured features for SME loan risk assessment. First survey of unstructured data gaps across Bangladeshi banks. Published first-author at IEEE IDAA 2025.</div>
+        <div class="project-tech">
+          <span class="tech-tag">BERT</span>
+          <span class="tech-tag">XGBoost</span>
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">IEEE Xplore</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:rgba(14,110,86,0.08);">🩺</div>
+        <div class="project-card-title">Health Risk Prediction — MIMIC-IV Validation</div>
+        <div class="project-desc">Ensemble learning system with XAI (SHAP, LIME), FT-Transformer, and external MIMIC-IV validation on 1,000-patient dataset. Multi-layer XAI pipeline for clinical transparency in diagnostic tasks.</div>
+        <div class="project-tech">
+          <span class="tech-tag">FT-Transformer</span>
+          <span class="tech-tag">MIMIC-IV</span>
+          <span class="tech-tag">SHAP</span>
+          <span class="tech-tag">LIME</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">
+          <div class="timeline-date-label">May 2025 – Apr 2026</div>
+        </div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <div class="timeline-org">Bangladesh University of Professionals</div>
+          <div class="timeline-role">Research Assistant</div>
+          <ul class="timeline-bullets">
+            <li>Designed end-to-end training pipelines for multimodal LLM fine-tuning (LoRA/QLoRA) on medical imaging datasets including 30,000-sample MRI corpora</li>
+            <li>Conducted systematic benchmarks across MedGemma, GPT-4, Federated Learning, and CNN architectures with XAI overlays</li>
+            <li>Engineered 39-feature hourly smart grid dataset; Optuna hyperparameter search over 11 competing models</li>
+            <li>Authored 4 manuscripts submitted to IEEE Access, Int. J. Smart Grid, Franklin Open, and PLOS One</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">
+          <div class="timeline-date-label">Oct 2024 – Dec 2024</div>
+        </div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <div class="timeline-org">Bangladesh Bank</div>
+          <div class="timeline-role">Research Intern</div>
+          <ul class="timeline-bullets">
+            <li>Integrated BERT text embeddings with XGBoost for SME loan risk; conducted first survey of unstructured data gaps across major Bangladeshi banks</li>
+            <li>Designed Big Data collection templates to standardize annual financial reporting from national corporations</li>
+            <li>Presented findings as first author at IEEE IDAA 2025 international conference</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">
+          <div class="timeline-date-label">2024 – 2025</div>
+        </div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <div class="timeline-org">IEEE BUP Student Branch</div>
+          <div class="timeline-role">Vice Chair, Operations</div>
+          <ul class="timeline-bullets">
+            <li>Organised the 2nd International Conference on ICT for Sustainable Development (ICICT4SD 2023)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & AWARDS strip -->
+<section style="background: var(--paper); padding: 3.5rem 0;" id="education">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Education & Achievements</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+      <div class="stat-card blue" style="padding: 1.5rem;">
+        <div style="font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink3); margin-bottom:0.75rem;">B.Sc. Degree</div>
+        <div style="font-family:var(--serif); font-size:1.1rem; margin-bottom:0.25rem;">Bangladesh University of Professionals</div>
+        <div style="font-size:0.85rem; color:var(--ink3);">Information & Communication Engineering<br>CGPA 3.72/4.00 · 2021–2025</div>
+      </div>
+      <div class="stat-card green" style="padding: 1.5rem;">
+        <div style="font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink3); margin-bottom:0.75rem;">HSC</div>
+        <div style="font-family:var(--serif); font-size:1.1rem; margin-bottom:0.25rem;">Notre Dame College, Dhaka</div>
+        <div style="font-size:0.85rem; color:var(--ink3);">Science · GPA 5.0/5.0 · 2021</div>
+      </div>
+      <div class="stat-card amber" style="padding: 1.5rem;">
+        <div style="font-size:0.75rem; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink3); margin-bottom:0.75rem;">Recognition</div>
+        <div style="font-family:var(--serif); font-size:1.05rem; margin-bottom:0.25rem;">First Runner-Up, ICPC Team Forming 2022</div>
+        <div style="font-size:0.85rem; color:var(--ink3);">BUP InfoTech Club · ACM ICPC 2023 & 2024 Participant · IEEE Member #100279904</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="footer-name">Nabil Walid Rafi</div>
+  <p style="font-size:0.9rem; color:rgba(255,255,255,0.4); margin-bottom:0.25rem;">
+    B.Sc. ICE · BUP · CGPA 3.72/4.00
+  </p>
+  <p style="font-size:0.85rem; color:rgba(255,255,255,0.35);">
+    Seeking Fully Funded Master's Research Assistantship in Canada
+  </p>
+  <div class="footer-links">
+    <a href="mailto:nabilwalidrafi@gmail.com">nabilwalidrafi@gmail.com</a>
+    <a href="https://linkedin.com/in/nabilwalidrafi" target="_blank">LinkedIn</a>
+    <a href="https://github.com/nabilwalidrafi" target="_blank">GitHub</a>
+    <a href="https://huggingface.co/nabilwalidrafi" target="_blank">HuggingFace</a>
+    <a href="https://orcid.org/0009-0007-0020-6278" target="_blank">ORCID</a>
+    <a href="tel:+8801712270990">+880-171-227-0990</a>
+  </div>
+  <p class="footer-note">© 2025 Nabil Walid Rafi · Dhaka, Bangladesh</p>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pub-card, .project-card, .timeline-item, .stat-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Active nav link highlight
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
